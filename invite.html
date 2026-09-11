@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>招待状を受け取る — Art Laieta Patron</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --deep-earth: #1A1410;
+    --terracotta: #8B4A2F;
+    --terracotta-light: #C4704A;
+    --gold: #B8935A;
+    --border: rgba(139,74,47,0.15);
+    --border-light: rgba(139,74,47,0.08);
+    --input-bg: rgba(255,255,255,0.03);
+    --input-border: rgba(184,147,90,0.2);
+    --input-focus: rgba(184,147,90,0.5);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--deep-earth);
+    color: var(--cream);
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 300;
+    line-height: 1.9;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(13,10,8,0.95) 0%, transparent 100%);
+    backdrop-filter: blur(8px);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--cream);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+  .nav-back {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    color: rgba(245,240,232,0.4);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-back:hover { color: var(--gold); }
+
+  /* BG */
+  .page-bg {
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(139,74,47,0.12) 0%, transparent 60%),
+      linear-gradient(180deg, #0D0A08 0%, #1A1410 50%, #120E0C 100%);
+    pointer-events: none;
+  }
+
+  /* LAYOUT */
+  .page-wrap {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 4rem;
+  }
+
+  /* LEFT — summary */
+  .summary {
+    padding: 10rem 0 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .eyebrow {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 24px; height: 0.5px;
+    background: var(--gold);
+    opacity: 0.6;
+    flex: none;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.25;
+    color: var(--cream);
+    margin-bottom: 2rem;
+  }
+
+  .summary-body {
+    font-size: 0.88rem;
+    line-height: 2.1;
+    color: rgba(245,240,232,0.55);
+    margin-bottom: 3rem;
+  }
+
+  /* recap list */
+  .recap {
+    list-style: none;
+    border-top: 0.5px solid var(--border-light);
+  }
+  .recap li {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.1rem 0;
+    border-bottom: 0.5px solid var(--border-light);
+    font-size: 0.8rem;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.7;
+    align-items: baseline;
+  }
+  .recap-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    opacity: 0.6;
+    flex: none;
+    width: 18px;
+  }
+  .recap strong {
+    color: rgba(245,240,232,0.8);
+    font-weight: 400;
+    display: block;
+    font-size: 0.82rem;
+  }
+
+  /* RIGHT — form */
+  .form-wrap {
+    padding: 10rem 0 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form-card {
+    background: rgba(255,255,255,0.02);
+    border: 0.5px solid var(--border-light);
+    padding: 3rem;
+  }
+
+  .form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-sub {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: rgba(245,240,232,0.35);
+    margin-bottom: 2.5rem;
+  }
+
+  .field {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    color: rgba(245,240,232,0.45);
+    margin-bottom: 0.6rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    background: var(--input-bg);
+    border: 0.5px solid var(--input-border);
+    color: var(--cream);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    padding: 0.85rem 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--input-focus);
+  }
+  input::placeholder, textarea::placeholder {
+    color: rgba(245,240,232,0.2);
+    font-size: 0.82rem;
+  }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B8935A' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+  }
+  select option {
+    background: #1A1410;
+    color: var(--cream);
+  }
+
+  textarea { resize: vertical; min-height: 100px; line-height: 1.8; }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-note {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: rgba(245,240,232,0.25);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--terracotta);
+    border: none;
+    color: var(--cream);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .btn-submit:hover { background: var(--terracotta-light); }
+
+  /* SUCCESS STATE */
+  .success-state {
+    display: none;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+  .success-state.show { display: block; }
+  .form-card.hide { display: none; }
+
+  .success-ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: var(--gold);
+    opacity: 0.4;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .success-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 1rem;
+  }
+  .success-body {
+    font-size: 0.85rem;
+    line-height: 2;
+    color: rgba(245,240,232,0.5);
+  }
+
+  /* ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.9s ease forwards;
+  }
+  .fade-in:nth-child(2) { animation-delay: 0.15s; }
+  .fade-in:nth-child(3) { animation-delay: 0.25s; }
+  .fade-in:nth-child(4) { animation-delay: 0.35s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* DIVIDER */
+  .divider-v {
+    position: absolute;
+    left: 50%; top: 8rem; bottom: 6rem;
+    width: 0.5px;
+    background: linear-gradient(to bottom, transparent, var(--border), transparent);
+  }
+
+  /* MOBILE */
+  @media (max-width: 720px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 0; }
+    .summary { padding: 8rem 0 3rem; }
+    .form-wrap { padding: 0 0 6rem; }
+    .divider-v { display: none; }
+    .field-row { grid-template-columns: 1fr; }
+    nav { padding: 1.25rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-bg"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">Art Laieta Patron</a>
+  <a class="nav-back" href="index.html">← プログラムに戻る</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="divider-v"></div>
+
+  <!-- LEFT -->
+  <div class="summary">
+    <p class="eyebrow fade-in">Patron Program 2026</p>
+    <h1 class="fade-in">縁の始まりは、<br>ここから。</h1>
+    <p class="summary-body fade-in">
+      招待状をご請求いただいた方に、プログラムの詳細資料と担当コーディネーターからのご連絡をお送りします。お申し込みの義務は一切ありません。まず、知ることから始めてください。
+    </p>
+
+    <ul class="recap fade-in">
+      <li>
+        <span class="recap-icon">I</span>
+        <div><strong>専用区画または樽の命名権</strong>Art Laieta の公式記録に、あなたの名前が永久に刻まれる。</div>
+      </li>
+      <li>
+        <span class="recap-icon">II</span>
+        <div><strong>金属プレート付き認定証明書</strong>区画またはバレルに取り付けられるプレートと、公証人発行の証明書。</div>
+      </li>
+      <li>
+        <span class="recap-icon">III</span>
+        <div><strong>オリジナルラベル付きワイン 6本</strong>あなたの名前・メッセージを印字したカスタムラベル。木箱入りで日本へ配送。</div>
+      </li>
+      <li>
+        <span class="recap-icon">IV</span>
+        <div><strong>収穫祭プライベート招待（2名分）</strong>イベリコハムや地産チーズを片手に、醸造家と語らう時間。</div>
+      </li>
+      <li>
+        <span class="recap-icon">V</span>
+        <div><strong>バーチャル試飲会（年1〜2回）</strong>醸造家とオンラインでつながる、日本語通訳付き少人数制。</div>
+      </li>
+      <li>
+        <span class="recap-icon">VI</span>
+        <div><strong>年4回のパーソナルレポート</strong>醸造家から直接届く、あなたの畑・バレルの成長記録。</div>
+      </li>
+      <li>
+        <span class="recap-icon">VII</span>
+        <div><strong>日本語専属コーディネーター</strong>ご質問・ご要望すべてに日本語で対応。</div>
+      </li>
+      <li>
+        <span class="recap-icon">VIII</span>
+        <div><strong>翌年優先継続権</strong>2年目からは選考なし。縁を継続する権利は、常に Patron のもとに。</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="form-wrap">
+    <div class="form-card" id="formCard">
+      <div class="form-title">招待状を受け取る</div>
+      <div class="form-sub">REQUEST YOUR INVITATION · 2026 SEASON</div>
+
+      <div class="field">
+        <label>お名前 *</label>
+        <div class="field-row">
+          <input type="text" id="lastName" placeholder="山田" />
+          <input type="text" id="firstName" placeholder="太郎" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>メールアドレス *</label>
+        <input type="email" id="email" placeholder="taro@example.com" />
+      </div>
+
+      <div class="field">
+        <label>電話番号（任意）</label>
+        <input type="tel" id="phone" placeholder="+81 90-0000-0000" />
+      </div>
+
+      <div class="field">
+        <label>お住まいの都市</label>
+        <input type="text" id="city" placeholder="東京" />
+      </div>
+
+      <div class="field">
+        <label>このプログラムを知ったきっかけ</label>
+        <select id="source">
+          <option value="" disabled selected>選択してください</option>
+          <option>SNS（Instagram / Facebook）</option>
+          <option>知人・友人の紹介</option>
+          <option>ウェブ検索</option>
+          <option>ワインイベント・試飲会</option>
+          <option>その他</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>ご質問・関心のあること（任意）</label>
+        <textarea id="message" placeholder="ワインへの関心、バルセロナとのご縁、どんなことでも。"></textarea>
+      </div>
+
+      <p class="form-note">
+        ご入力いただいた情報は招待状の送付のみに使用します。第三者への提供は一切行いません。<br>
+        担当コーディネーターより、3営業日以内にご連絡いたします。
+      </p>
+
+      <button class="btn-submit" onclick="handleSubmit()">招待状を請求する</button>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-state" id="successState">
+      <div class="success-ornament">縁</div>
+      <div class="success-title">ありがとうございます。</div>
+      <p class="success-body">
+        ご請求を承りました。<br>
+        担当コーディネーターより、3営業日以内に<br>
+        日本語でご連絡いたします。<br><br>
+        Art Laieta との縁が、ここから始まります。
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+async function handleSubmit() {
+  const email = document.getElementById('email').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const firstName = document.getElementById('firstName').value.trim();
+
+  if (!lastName && !firstName) {
+    alert('お名前をご入力ください。');
+    return;
+  }
+  if (!email || !email.includes('@')) {
+    alert('有効なメールアドレスをご入力ください。');
+    return;
+  }
+
+  const btn = document.querySelector('.btn-submit');
+  btn.textContent = '送信中...';
+  btn.disabled = true;
+
+  const data = {
+    name: lastName + ' ' + firstName,
+    email: email,
+    phone: document.getElementById('phone').value.trim(),
+    city: document.getElementById('city').value.trim(),
+    source: document.getElementById('source').value,
+    message: document.getElementById('message').value.trim()
+  };
+
+  try {
+    const res = await fetch('https://formspree.io/f/mlgayvkd', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      document.getElementById('formCard').classList.add('hide');
+      document.getElementById('successState').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      btn.textContent = '招待状を請求する';
+      btn.disabled = false;
+      alert('送信に失敗しました。しばらく経ってから再度お試しください。');
+    }
+  } catch (e) {
+    btn.textContent = '招待状を請求する';
+    btn.disabled = false;
+    alert('通信エラーが発生しました。インターネット接続をご確認ください。');
+  }
+}
+</script>
+</body>
+</html>
