@@ -524,16 +524,23 @@
   /* ── COMING SOON ── */
   .coming-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2px;
     margin-top: 3.5rem;
   }
   .coming-card {
-    padding: 2.5rem;
+    padding: 0;
     background: rgba(255,255,255,0.015);
     border: 0.5px solid var(--border-light);
     position: relative;
     overflow: hidden;
+  }
+  .coming-photo {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.85) brightness(0.9);
   }
   .coming-card::after {
     content: 'Coming Soon';
@@ -542,8 +549,13 @@
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 0.55rem;
     letter-spacing: 0.2em;
-    color: var(--muted);
-    opacity: 0.6;
+    color: var(--cream);
+    opacity: 0.75;
+    background: rgba(13,10,8,0.55);
+    padding: 0.3rem 0.6rem;
+  }
+  .coming-body {
+    padding: 1.75rem 2rem 2.25rem;
   }
   .coming-region {
     font-family: 'Noto Sans JP', sans-serif;
@@ -833,6 +845,7 @@
   <div class="estate-card">
     <!-- LEFT -->
     <div class="estate-left">
+      <img src="https://artlaieta.wine/wp-content/uploads/2025/11/2025.11.10-Sunset-DJ-Wine-Bar-Art-Laieta.jpg" alt="Art Laieta, Alella — sunset over the vineyard" style="width:100%; height:220px; object-fit:cover; margin-bottom:1.5rem;">
       <div>
         <div class="estate-badge">2026 Season · 募集中</div>
         <div class="estate-name">Art Laieta</div>
@@ -897,36 +910,54 @@
   <h2>次の縁は、<br>準備中です。</h2>
   <p>Vino Collectiveは、Art Laietaを皮切りに複数のワイナリーとの縁を順次展開していきます。</p>
 
-  <div class="coming-grid" style="grid-template-columns: repeat(3, 1fr);">
+  <div class="coming-grid">
     <div class="coming-card">
-      <div class="coming-region">Priorat · Catalonia</div>
-      <div class="coming-name">— · —</div>
-      <p class="coming-desc">険しい山岳地帯に広がるリコレージャ土壌。スペイン最高峰のDOQ産地。</p>
+      <img class="coming-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Serra_del_Montsant_-_12.jpg?width=800" alt="Priorat, vineyards at the foot of Serra del Montsant">
+      <div class="coming-body">
+        <div class="coming-region">Priorat · Catalonia</div>
+        <div class="coming-name">— · —</div>
+        <p class="coming-desc">険しい山岳地帯に広がるリコレージャ土壌。スペイン最高峰のDOQ産地。</p>
+      </div>
     </div>
     <div class="coming-card">
-      <div class="coming-region">Ribera del Duero · Castilla</div>
-      <div class="coming-name">— · —</div>
-      <p class="coming-desc">標高800mの高原に広がる畑。テンプラニーリョが生む力強く複雑なワイン。</p>
+      <img class="coming-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Clear_cultivation_in_Vi%C3%B1edos_en_la_Ribera_del_Duero.jpg?width=800" alt="Ribera del Duero vineyard plateau">
+      <div class="coming-body">
+        <div class="coming-region">Ribera del Duero · Castilla</div>
+        <div class="coming-name">— · —</div>
+        <p class="coming-desc">標高800mの高原に広がる畑。テンプラニーリョが生む力強く複雑なワイン。</p>
+      </div>
     </div>
     <div class="coming-card">
-      <div class="coming-region">Rioja Oriental · La Rioja</div>
-      <div class="coming-name">— · —</div>
-      <p class="coming-desc">地中海の影響を受けるリオハ東部。ガルナッチャの個性が輝く産地。</p>
+      <img class="coming-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/HOME_4.jpg?width=800" alt="Rioja Oriental vineyard, Grenache plot">
+      <div class="coming-body">
+        <div class="coming-region">Rioja Oriental · La Rioja</div>
+        <div class="coming-name">— · —</div>
+        <p class="coming-desc">地中海の影響を受けるリオハ東部。ガルナッチャの個性が輝く産地。</p>
+      </div>
     </div>
     <div class="coming-card">
-      <div class="coming-region">Rioja Alavesa · Álava</div>
-      <div class="coming-name">— · —</div>
-      <p class="coming-desc">バスク地方に位置するリオハ・アラベサ。石灰岩質土壌とエレガントなテンプラニーリョ。</p>
+      <img class="coming-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Paisaje_de_Labastida_desde_la_ermita_de_Remelluri.jpg?width=800" alt="Rioja Alavesa, green hills near Labastida">
+      <div class="coming-body">
+        <div class="coming-region">Rioja Alavesa · Álava</div>
+        <div class="coming-name">— · —</div>
+        <p class="coming-desc">バスク地方に位置するリオハ・アラベサ。石灰岩質土壌とエレガントなテンプラニーリョ。</p>
+      </div>
     </div>
     <div class="coming-card">
-      <div class="coming-region">Penedès · Catalonia</div>
-      <div class="coming-name">— · —</div>
-      <p class="coming-desc">Corpinnat生産者が作る瓶内二次発酵の伝統的スパークリング。バルセロナの産地。</p>
+      <img class="coming-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Vineyard_of_Codorn%C3%ADu_2012.jpg?width=800" alt="Penedès vineyard, Codorníu">
+      <div class="coming-body">
+        <div class="coming-region">Penedès · Catalonia</div>
+        <div class="coming-name">— · —</div>
+        <p class="coming-desc">Corpinnat生産者が作る瓶内二次発酵の伝統的スパークリング。バルセロナの産地。</p>
+      </div>
     </div>
     <div class="coming-card">
-      <div class="coming-region">Murcia · Southeast Spain</div>
-      <div class="coming-name">— · —</div>
-      <p class="coming-desc">地中海性気候とマタロ（モナストレル）が生む、濃厚で個性的なワイン産地。</p>
+      <img class="coming-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Vi%C3%B1edos_Ecol%C3%B3gicos_en_la_Sierra_de_Salinas%2C_Yecla_%28Murcia%29.jpg?width=800" alt="Murcia vineyard, Sierra de Salinas, Yecla">
+      <div class="coming-body">
+        <div class="coming-region">Murcia · Southeast Spain</div>
+        <div class="coming-name">— · —</div>
+        <p class="coming-desc">地中海性気候とマタロ（モナストレル）が生む、濃厚で個性的なワイン産地。</p>
+      </div>
     </div>
   </div>
 </section>
