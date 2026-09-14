@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art Laieta Patron Program — Vino Collective</title>
+<meta name="description" content="Art Laieta（DO Alella, Barcelona）を舞台にした Vino Collective の Founding Patron Program。概要・ワイン・現地体験・FAQをご紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --deep-earth: #1A1410;
+    --terracotta: #8B4A2F;
+    --terracotta-light: #C4704A;
+    --gold: #B8935A;
+    --gold-light: #D4B07A;
+    --muted: #6B5E52;
+    --border: rgba(139,74,47,0.15);
+    --border-light: rgba(139,74,47,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--deep-earth);
+    color: var(--cream);
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 300;
+    line-height: 1.9;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(13,10,8,0.92) 0%, transparent 100%);
+    backdrop-filter: blur(8px);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--cream);
+    opacity: 0.85;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem 2.5rem;
+  }
+  .nav-link {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    color: rgba(245,240,232,0.45);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.3s;
+  }
+  .nav-link:hover { color: var(--gold); }
+  .nav-cta {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-decoration: none;
+    white-space: nowrap;
+    border: 0.5px solid rgba(184,147,90,0.4);
+    padding: 0.5rem 1.25rem;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: rgba(184,147,90,0.1); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 9rem 2rem 4rem;
+    text-align: center;
+  }
+  .page-eyebrow {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+  .page-eyebrow a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 0.5px solid rgba(184,147,90,0.4);
+  }
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.2;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+  .page-title span {
+    display: block;
+    font-size: 0.42em;
+    font-style: normal;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-top: 0.75rem;
+  }
+  .page-sub {
+    font-size: 0.95rem;
+    line-height: 2.1;
+    color: rgba(245,240,232,0.6);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 100%;
+    height: 0.5px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 6rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .section-label::before {
+    content: '';
+    flex: none;
+    width: 28px; height: 0.5px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 3.8vw, 3rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--cream);
+    margin-bottom: 2rem;
+  }
+  .lead {
+    font-size: 1rem;
+    line-height: 2.1;
+    color: rgba(245,240,232,0.75);
+    margin-bottom: 1.5rem;
+  }
+  p { font-size: 0.9rem; line-height: 2.1; color: rgba(245,240,232,0.55); margin-bottom: 1.5rem; }
+
+  /* ── QUICK FACTS ── */
+  .quick-facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-bottom: 3.5rem;
+    border: 0.5px solid var(--border-light);
+  }
+  .quick-fact {
+    padding: 1.75rem 1.5rem;
+    background: rgba(255,255,255,0.015);
+  }
+  .qf-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.56rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .qf-val {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.85);
+  }
+
+  .includes-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .patron-includes {
+    list-style: none;
+    border-top: 0.5px solid var(--border-light);
+  }
+  .patron-includes li {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1rem 0;
+    border-bottom: 0.5px solid var(--border-light);
+    font-size: 0.82rem;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.7;
+    align-items: baseline;
+  }
+  .pi-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    color: var(--gold);
+    opacity: 0.6;
+    flex: none;
+    width: 18px;
+  }
+  .pi-main { color: rgba(245,240,232,0.85); font-weight: 400; display: block; }
+
+  /* ── WINE TIMELINE ── */
+  .wine-timeline {
+    margin-top: 3rem;
+    position: relative;
+    padding-left: 2rem;
+    border-left: 0.5px solid var(--border);
+  }
+  .wt-step { padding: 0 0 2.5rem 2.5rem; position: relative; }
+  .wt-step:last-child { padding-bottom: 0; }
+  .wt-dot {
+    position: absolute; left: -4px; top: 8px;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--gold); opacity: 0.6;
+  }
+  .wt-when {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .wt-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--cream);
+    margin-bottom: 0.6rem;
+  }
+  .wt-desc { font-size: 0.85rem; line-height: 2; color: rgba(245,240,232,0.55); margin: 0; }
+
+  /* ── EXPERIENCE SPLIT ── */
+  .split-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+  }
+  .split-card {
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.02);
+    border: 0.5px solid var(--border-light);
+  }
+  .split-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--cream);
+    margin-bottom: 1.25rem;
+  }
+  .split-card p { font-size: 0.85rem; margin-bottom: 0; }
+  .split-note {
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: rgba(245,240,232,0.35);
+    line-height: 1.9;
+    margin-top: 2rem;
+  }
+
+  /* ── PEOPLE / PLACE ── */
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+  }
+  .people-card {
+    background: rgba(255,255,255,0.015);
+    border: 0.5px solid var(--border-light);
+    overflow: hidden;
+  }
+  .people-photo {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.85) brightness(0.9);
+  }
+  .people-body { padding: 1.5rem 1.5rem 1.75rem; }
+  .people-role {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .people-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--cream);
+    margin-bottom: 0.6rem;
+  }
+  .people-desc { font-size: 0.78rem; line-height: 1.9; color: rgba(245,240,232,0.5); margin: 0; }
+  .people-card.no-photo .people-body {
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(139,74,47,0.06);
+  }
+
+  /* ── PERKS SPLIT ── */
+  .perks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+    border: 0.5px solid var(--border-light);
+  }
+  .perks-col { padding: 2.5rem; }
+  .perks-col:first-child { background: rgba(139,74,47,0.08); }
+  .perks-col:last-child { background: rgba(255,255,255,0.015); }
+  .perks-heading {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .perks-list { list-style: none; }
+  .perks-list li {
+    font-size: 0.82rem;
+    line-height: 1.9;
+    color: rgba(245,240,232,0.65);
+    padding: 0.6rem 0;
+    border-bottom: 0.5px solid var(--border-light);
+  }
+  .perks-list li:last-child { border-bottom: none; }
+
+  /* ── FAQ ── */
+  .faq-list { border-top: 0.5px solid var(--border-light); margin-top: 3rem; }
+  .faq-item { border-bottom: 0.5px solid var(--border-light); }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 1.4rem 0;
+    font-size: 0.88rem;
+    color: rgba(245,240,232,0.85);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    flex: none;
+    transition: transform 0.3s;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p {
+    font-size: 0.82rem;
+    line-height: 2;
+    color: rgba(245,240,232,0.5);
+    padding-bottom: 1.5rem;
+    margin: 0;
+  }
+
+  /* ── FINAL CTA ── */
+  .cta-final {
+    text-align: center;
+    padding: 7rem 2rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .cta-final h2 { margin-bottom: 1.5rem; }
+  .cta-final p { margin-bottom: 2.5rem; }
+  .btn-main {
+    display: inline-block;
+    padding: 1.1rem 3.5rem;
+    background: var(--terracotta);
+    color: var(--cream);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .btn-main:hover { background: var(--terracotta-light); }
+  .cta-note {
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: rgba(245,240,232,0.3);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 0.5px solid var(--border-light);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+  .footer-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    color: rgba(245,240,232,0.2);
+    line-height: 2;
+    margin: 0;
+  }
+
+  /* ── ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 760px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links .nav-link { display: none; }
+    .page-header { padding: 7rem 1.5rem 3rem; }
+    .quick-facts { grid-template-columns: 1fr 1fr; }
+    .split-grid { grid-template-columns: 1fr; }
+    .people-grid { grid-template-columns: 1fr; }
+    .perks-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Vino Collective</a>
+  <div class="nav-links">
+    <a class="nav-link" href="#overview">概要</a>
+    <a class="nav-link" href="#wine">ワイン</a>
+    <a class="nav-link" href="#experience">現地体験</a>
+    <a class="nav-link" href="#faq">FAQ</a>
+    <a class="nav-cta" href="invite.html">招待状を受け取る</a>
+  </div>
+</nav>
+
+<!-- ══ PAGE HEADER ══ -->
+<header class="page-header reveal">
+  <p class="page-eyebrow"><a href="index.html">← Vino Collective</a> ・ Current Estate</p>
+  <h1 class="page-title">Art Laieta<span>Founding Patron Program</span></h1>
+  <p class="page-sub">
+    バルセロナ近郊、DO Alellaの家族経営ワイナリー。畑の一年に関わり、収穫を見届け、あなただけのラベルをまとったワインを受け取る——1年間のプログラムです。
+  </p>
+</header>
+
+<div class="divider"></div>
+
+<!-- ══ 30-SECOND OVERVIEW ══ -->
+<section id="overview" class="reveal">
+  <div class="section-label">30-Second Overview</div>
+  <h2>30秒でわかる、<br>Art Laietaという選択。</h2>
+
+  <div class="quick-facts">
+    <div class="quick-fact">
+      <div class="qf-label">対象ワイナリー</div>
+      <div class="qf-val">Art Laieta<br>DO Alella, Barcelona</div>
+    </div>
+    <div class="quick-fact">
+      <div class="qf-label">期間</div>
+      <div class="qf-val">2027年1月 〜 12月<br>（1年間）</div>
+    </div>
+    <div class="quick-fact">
+      <div class="qf-label">参加費</div>
+      <div class="qf-val">お問い合わせください<br>（Founding Patron 25組限定）</div>
+    </div>
+    <div class="quick-fact">
+      <div class="qf-label">含まれるもの</div>
+      <div class="qf-val">区画・樽の命名権<br>ワイン6本、収穫祭招待 ほか</div>
+    </div>
+  </div>
+
+  <div class="includes-title">含まれるもの・全項目</div>
+  <ul class="patron-includes">
+    <li><span class="pi-num">I</span><div><span class="pi-main">専用区画または樽の命名権</span>Art Laieta の公式記録に、あなたの名前が刻まれる。</div></li>
+    <li><span class="pi-num">II</span><div><span class="pi-main">金属プレート付き認定証明書</span>区画またはバレルに取り付けられるプレートと証明書。</div></li>
+    <li><span class="pi-num">III</span><div><span class="pi-main">オリジナルラベル付きワイン 6本</span>あなたの名前・メッセージを印字したカスタムラベル。木箱入りで日本へ配送。</div></li>
+    <li><span class="pi-num">IV</span><div><span class="pi-main">収穫祭プライベート招待（2名分）</span>オーナーファミリー・醸造家と語らう時間。</div></li>
+    <li><span class="pi-num">V</span><div><span class="pi-main">バーチャル試飲会（年1〜2回）</span>日本語通訳付き、少人数制。</div></li>
+    <li><span class="pi-num">VI</span><div><span class="pi-main">季節ごとのパーソナルレポート</span>畑の生育状況・収穫の様子が届く。</div></li>
+    <li><span class="pi-num">VII</span><div><span class="pi-main">日本語専属コーディネーター</span>ご質問・ご要望すべてに日本語で対応。</div></li>
+    <li><span class="pi-num">VIII</span><div><span class="pi-main">翌年優先継続権</span>2年目以降は選考なしで継続可能。</div></li>
+  </ul>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ THE WINE ══ -->
+<section id="wine" class="reveal">
+  <div class="section-label">The Wine</div>
+  <h2>あなたが受け取るワイン、<br>その届く時期。</h2>
+  <p class="lead">
+    有機農法・手摘み・伝統品種で育てられたブドウから、あなただけのオリジナルラベルワイン 6本が生まれます。木箱に納められ、日本まで配送されます。
+  </p>
+
+  <div class="wine-timeline">
+    <div class="wt-step">
+      <div class="wt-dot"></div>
+      <div class="wt-when">秋 · Harvest</div>
+      <div class="wt-title">収穫</div>
+      <p class="wt-desc">あなたの区画・樽のブドウが収穫される。収穫祭にはプライベート招待（詳しくは次のセクションへ）。</p>
+    </div>
+    <div class="wt-step">
+      <div class="wt-dot"></div>
+      <div class="wt-when">冬 〜 翌年 · Vinification &amp; Aging</div>
+      <div class="wt-title">醸造・熟成</div>
+      <p class="wt-desc">収穫を終えたブドウは醸造・熟成のプロセスへ。初年度の冬は、早飲み用またはワイナリー規定商品を先にお届けします。</p>
+    </div>
+    <div class="wt-step">
+      <div class="wt-dot"></div>
+      <div class="wt-when">翌年冬 · Arrival</div>
+      <div class="wt-title">お届け</div>
+      <p class="wt-desc">醸造・熟成を経たオリジナルラベルワイン 6本が、手書きのメッセージカードとともに日本へ届く。そして、縁（えん）はまた一年深まる。</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ THE EXPERIENCE ══ -->
+<section id="experience" class="reveal">
+  <div class="section-label">The Experience</div>
+  <h2>現地に行く、<br>行かない、その両方に。</h2>
+  <p class="lead">
+    現地体験の中心は、秋の収穫祭へのご招待です。渡航が難しい場合も、Patronとしての体験や特典に変わりはありません。
+  </p>
+
+  <div class="split-grid">
+    <div class="split-card">
+      <div class="split-title">現地へ行く場合</div>
+      <p>
+        収穫祭へプライベートにご招待（2名分）。ワイナリーを訪ね、オーナーファミリーや醸造家をはじめとする生産者と直接語らう時間。畑を歩き、その年のブドウを味わうことができます。
+      </p>
+    </div>
+    <div class="split-card">
+      <div class="split-title">渡航できない場合</div>
+      <p>
+        収穫の様子をリアルタイムで届けるオンライン体験にご参加いただけます。動画レポートやバーチャル試飲会を通じて、現地に行かなくても畑の一年を見守ることができます。
+      </p>
+    </div>
+  </div>
+  <p class="split-note">
+    ※ 開催時期によっては、収穫祭以外の形（仕込み・熟成見学など）でワイナリー体験をご案内する場合があります。
+  </p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ PEOPLE & PLACE ══ -->
+<section id="people" class="reveal">
+  <div class="section-label">People &amp; Place</div>
+  <h2>畑を守る人々と、<br>その間に立つ人。</h2>
+  <p class="lead">
+    Art Laietaは、1991年から続く家族経営のワイナリーです。その畑と、日本のPatronの間に立つ人がいます。
+  </p>
+
+  <div class="people-grid">
+    <div class="people-card">
+      <img class="people-photo" src="https://artlaieta.wine/wp-content/uploads/2025/11/2025.11.10-Sunset-DJ-Wine-Bar-Art-Laieta.jpg" alt="Art Laieta の畑、地中海に沈む夕陽">
+      <div class="people-body">
+        <div class="people-role">The Vineyard</div>
+        <div class="people-name">Art Laieta, Alella</div>
+        <p class="people-desc">地中海を望む68haの自社畑。有機農法を守り続ける、家族経営のワイナリー。</p>
+      </div>
+    </div>
+    <div class="people-card">
+      <img class="people-photo" src="https://artlaieta.wine/wp-content/uploads/2025/11/alta_alella_enoturisme_2025.jpg" alt="Art Laieta のワインツーリズム体験">
+      <div class="people-body">
+        <div class="people-role">The Family</div>
+        <div class="people-name">Josep Maria &amp; Cristina</div>
+        <p class="people-desc">Josep MariaとCristina夫妻、そして娘のMireiaとGeorgina。ブドウ畑とともに育った家族が、畑からボトルまでを見守ります。</p>
+      </div>
+    </div>
+    <div class="people-card no-photo">
+      <div class="people-body">
+        <div class="people-role">Your Coordinator</div>
+        <div class="people-name">常木 翔（Sho）</div>
+        <p class="people-desc">スペイン在住、En Collective LLC 創業者。現地の生産者と日本のPatronの間に立ち、すべてのやりとりを日本語でサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ PERKS ══ -->
+<section id="perks" class="reveal">
+  <div class="section-label">Founding Year &amp; Beyond</div>
+  <h2>初年度だけの特典と、<br>ずっと続く縁（えん）。</h2>
+
+  <div class="perks-grid">
+    <div class="perks-col">
+      <div class="perks-heading">初年度限定（Founding Patron）</div>
+      <ul class="perks-list">
+        <li>Founding Patron 認定証明書・記念プレート</li>
+        <li>専用区画・樽の命名権の初回設定</li>
+        <li>Founding Patronとしての特別価格でのご案内</li>
+        <li>初年度限定の記念ラベルデザイン</li>
+      </ul>
+    </div>
+    <div class="perks-col">
+      <div class="perks-heading">2年目以降も続くPatron資格</div>
+      <ul class="perks-list">
+        <li>翌年以降の優先継続権（選考なし）</li>
+        <li>毎年届くオリジナルラベルワイン 6本</li>
+        <li>収穫祭へのプライベート招待</li>
+        <li>バーチャル試飲会・パーソナルレポート</li>
+        <li>日本語専属コーディネーターのサポート</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ FAQ ══ -->
+<section id="faq" class="reveal">
+  <div class="section-label">FAQ</div>
+  <h2>よくあるご質問。</h2>
+
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>ワインの配送について教えてください。</summary>
+      <p>オリジナルラベルワイン6本は木箱に納められ、Art Laietaから日本のご自宅まで直接配送されます。配送状況は専属コーディネーターより随時ご案内します。</p>
+    </details>
+    <details class="faq-item">
+      <summary>関税や税金はどうなりますか。</summary>
+      <p>国際配送に伴う関税・消費税等が発生する場合があります。詳細な費用や取り扱いについては、お申し込み前のご相談時に個別にご案内します。</p>
+    </details>
+    <details class="faq-item">
+      <summary>収穫祭の日程は変更できますか。</summary>
+      <p>収穫の時期は天候・生育状況により前後します。日程が確定次第、専属コーディネーターより早めにご連絡し、ご都合に合わせて調整いたします。</p>
+    </details>
+    <details class="faq-item">
+      <summary>途中でキャンセルすることはできますか。</summary>
+      <p>キャンセルポリシーの詳細は、お申し込み前のご相談時に個別にご説明します。ご不明点はお気軽にお問い合わせください。</p>
+    </details>
+    <details class="faq-item">
+      <summary>「区画・樽の命名権」は土地や樽の所有権を意味しますか。</summary>
+      <p>いいえ。命名権は、あなたの名前をワイナリーの記録やプレートに刻む象徴的な権利であり、土地・樽そのものの所有権を意味するものではありません。本プログラムは投資商品・金融商品ではなく、ワインの品質・収穫量は自然条件に左右されるため、内容および提供時期をお約束するものでもありません。</p>
+    </details>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ CTA ══ -->
+<div class="cta-final reveal">
+  <h2>まずは、<br>ご相談から。</h2>
+  <p style="color:rgba(245,240,232,0.5);">
+    参加費や条件の詳細は、招待状のご請求後、専属コーディネーターより個別にご案内します。お申し込みの義務は一切ありません。
+  </p>
+  <a class="btn-main" href="invite.html">参加について相談する</a>
+  <p class="cta-note">条件確定後は、こちらから正式にお申し込みいただけます。</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-logo">Vino Collective</div>
+  <p class="footer-text">
+    Operated by En Collective LLC（合同会社 En Collective） · 広島県 · 2026年設立<br>
+    team@en-collective.jp<br><br>
+    © 2026 Vino Collective / En Collective LLC. All rights reserved.
+  </p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(r => obs.observe(r));
+</script>
+</body>
+</html>

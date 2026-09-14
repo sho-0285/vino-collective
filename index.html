@@ -216,46 +216,34 @@
   .founding-box {
     max-width: 900px;
     margin: 0 auto;
-    padding: 3rem 2.5rem;
-    border: 0.5px solid var(--border-light);
-    background: rgba(255,255,255,0.015);
+    padding: 3rem 2.75rem;
+    border: 0.5px solid rgba(184,147,90,0.25);
+    background: rgba(255,255,255,0.012);
   }
   .founding-label {
-    text-align: center;
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
     color: var(--gold);
+    margin-bottom: 2rem;
+  }
+  .founding-intro {
+    font-size: 0.92rem;
+    line-height: 2.1;
+    color: rgba(245,240,232,0.75);
+    max-width: 660px;
     margin-bottom: 2.5rem;
   }
   .founding-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem 3rem;
   }
   .founding-item {
-    text-align: center;
-  }
-  .founding-item-label {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 0.58rem;
-    letter-spacing: 0.15em;
-    color: var(--muted);
-    margin-bottom: 0.6rem;
-  }
-  .founding-item-val {
-    font-size: 0.78rem;
-    line-height: 1.8;
-    color: rgba(245,240,232,0.65);
-  }
-  .founding-disclaimer {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 0.5px solid var(--border-light);
-    font-size: 0.68rem;
+    font-size: 0.85rem;
     line-height: 1.9;
-    color: rgba(245,240,232,0.3);
-    text-align: center;
+    color: rgba(245,240,232,0.65);
+    margin: 0;
   }
 
   /* ── DIVIDER ── */
@@ -537,36 +525,6 @@
     font-weight: 400;
   }
 
-  /* Availability bar */
-  .avail-wrap {
-    margin-top: 0.5rem;
-  }
-  .avail-label {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    color: rgba(245,240,232,0.35);
-    margin-bottom: 0.5rem;
-  }
-  .avail-bar {
-    width: 100%;
-    height: 2px;
-    background: rgba(255,255,255,0.06);
-    position: relative;
-  }
-  .avail-fill {
-    height: 100%;
-    width: 72%;
-    background: linear-gradient(to right, var(--terracotta), var(--gold));
-  }
-  .avail-note {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 0.6rem;
-    color: rgba(245,240,232,0.3);
-    margin-top: 0.5rem;
-    letter-spacing: 0.05em;
-  }
-
   /* ── COMING SOON ── */
   .coming-grid {
     display: grid;
@@ -759,7 +717,7 @@
     .how-steps { grid-template-columns: 1fr; }
     .estate-card { grid-template-columns: 1fr; }
     .coming-grid { grid-template-columns: 1fr; }
-    .founding-grid { grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+    .founding-grid { grid-template-columns: 1fr; gap: 1.25rem; }
     .founding-box { padding: 2rem 1.5rem; }
     .philosophy-section { padding: 3rem 1.5rem; }
     .en-row { flex-direction: column; gap: 1.5rem; }
@@ -775,7 +733,7 @@
     <a class="nav-link" href="#concept">コンセプト</a>
     <a class="nav-link" href="#estate">現在の案件</a>
     <a class="nav-link" href="#philosophy">私たちについて</a>
-    <a class="nav-cta" href="invite.html">招待状を受け取る</a>
+    <a class="nav-cta" href="#cta-final">招待状を受け取る</a>
   </div>
 </nav>
 
@@ -796,10 +754,6 @@
     あなたが、ワインのストーリーの一員になる。
   </p>
 
-  <div class="hero-cta-group">
-    <a class="btn-primary" href="#estate">最初の案件を見る</a>
-  </div>
-
   <div class="scroll-indicator">
     <div class="scroll-line"></div>
   </div>
@@ -807,28 +761,20 @@
 
 <!-- ══ FOUNDING PATRON OVERVIEW ══ -->
 <div class="founding-box reveal">
-  <div class="founding-label">Founding Patron Program · 概要</div>
-  <div class="founding-grid">
-    <div class="founding-item">
-      <div class="founding-item-label">期間</div>
-      <div class="founding-item-val">2026年4月 〜 2027年3月（1年間）</div>
-    </div>
-    <div class="founding-item">
-      <div class="founding-item-label">ワイン本数</div>
-      <div class="founding-item-val">オリジナルラベルワイン 6本／年</div>
-    </div>
-    <div class="founding-item">
-      <div class="founding-item-label">現地体験</div>
-      <div class="founding-item-val">収穫祭へのご招待<br>（渡航が難しい場合はオンライン参加も可）</div>
-    </div>
-    <div class="founding-item">
-      <div class="founding-item-label">免責事項</div>
-      <div class="founding-item-val">天候・収穫状況により内容が変動する場合があります</div>
-    </div>
-  </div>
-  <p class="founding-disclaimer">
-    本プログラムは投資商品・金融商品ではありません。ワインの品質・収穫量は自然条件に左右されるため、内容および提供時期をお約束するものではありません。
+  <div class="founding-label">FOUNDING PATRON PROGRAM · 25組限定</div>
+  <p class="founding-intro">
+    スペインの家族経営・ブティックワイナリーとつながり、畑の一年を見守り、収穫に参加し、自分だけのラベルをまとったワインを受け取るプログラムです。
   </p>
+  <div class="founding-grid">
+    <div class="founding-item">📅 期間：2027年1月〜2027年12月</div>
+    <div class="founding-item">🍷 ワイン本数：オリジナルラベルワイン 6本／年</div>
+    <div class="founding-item">✈️ 現地体験：収穫祭へのご招待（渡航が難しい場合はオンライン参加も可。開催時期によっては、収穫祭以外の形でワイナリー体験をご案内する場合があります）</div>
+    <div class="founding-item">📋 ※本プログラムは投資商品・金融商品ではありません。ワインの品質・収穫量は自然条件に左右されるため、内容および提供時期をお約束するものではありません。</div>
+  </div>
+</div>
+
+<div class="hero-cta-group" style="margin: 3rem auto 0; position:static;">
+  <a class="btn-primary" href="#estate">最初の案件を見る</a>
 </div>
 
 <div class="divider"></div>
@@ -921,7 +867,7 @@
     <div class="estate-left">
       <img src="https://artlaieta.wine/wp-content/uploads/2025/11/2025.11.10-Sunset-DJ-Wine-Bar-Art-Laieta.jpg" alt="Art Laieta, Alella — sunset over the vineyard" style="width:100%; height:220px; object-fit:cover; margin-bottom:1.5rem;">
       <div>
-        <div class="estate-badge">2026 Season · 募集中</div>
+        <div class="estate-badge">2027 Season · 募集中</div>
         <div class="estate-name">Art Laieta</div>
         <div class="estate-location">DO Alella · Barcelona, Spain</div>
         <p class="estate-desc">
@@ -945,14 +891,7 @@
           </div>
         </div>
 
-        <div class="avail-wrap">
-          <div class="avail-label">2026年シーズン 残り枠</div>
-          <div class="avail-bar"><div class="avail-fill"></div></div>
-          <div class="avail-note">25枠中 18枠 埋まっています</div>
-        </div>
-
-        <br>
-        <a class="btn-estate" href="index.html">Patronプログラムを見る →</a>
+        <a class="btn-estate" href="art-laieta.html">Patronプログラム詳細をみる →</a>
       </div>
     </div>
 
@@ -970,7 +909,6 @@
 
       <div style="margin-top:1.5rem; padding-top:1.5rem; border-top:0.5px solid var(--border-light);">
         <div style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-style:italic; color:var(--cream); line-height:1.4;">参加費・詳細は、お問い合わせください</div>
-        <div style="font-family:'Noto Sans JP',sans-serif; font-size:0.6rem; letter-spacing:0.15em; color:rgba(245,240,232,0.35); margin-top:0.6rem;">年会費なし · 配送料込み</div>
         <a class="btn-estate" href="invite.html" style="margin-top:1.5rem;">招待状を受け取る →</a>
       </div>
     </div>
@@ -1075,7 +1013,7 @@
 <div class="divider"></div>
 
 <!-- ══ CTA ══ -->
-<div class="cta-final reveal">
+<div class="cta-final reveal" id="cta-final">
   <div class="cta-ornament">縁</div>
   <h2>最初の Patron に<br>なりませんか。</h2>
   <p style="color:rgba(245,240,232,0.5);">
