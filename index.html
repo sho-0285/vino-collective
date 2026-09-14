@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vino Collective — 縁を、世界の土地に。</title>
+<title>Vino Collective — 縁（えん）を、世界の土地に。</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -210,6 +210,52 @@
     width: 0.5px; height: 48px;
     background: linear-gradient(to bottom, transparent, var(--gold));
     animation: lineGrow 2s ease-in-out infinite;
+  }
+
+  /* ── FOUNDING PATRON OVERVIEW ── */
+  .founding-box {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem;
+    border: 0.5px solid var(--border-light);
+    background: rgba(255,255,255,0.015);
+  }
+  .founding-label {
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+  }
+  .founding-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .founding-item {
+    text-align: center;
+  }
+  .founding-item-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .founding-item-val {
+    font-size: 0.78rem;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.65);
+  }
+  .founding-disclaimer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border-light);
+    font-size: 0.68rem;
+    line-height: 1.9;
+    color: rgba(245,240,232,0.3);
+    text-align: center;
   }
 
   /* ── DIVIDER ── */
@@ -713,6 +759,8 @@
     .how-steps { grid-template-columns: 1fr; }
     .estate-card { grid-template-columns: 1fr; }
     .coming-grid { grid-template-columns: 1fr; }
+    .founding-grid { grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+    .founding-box { padding: 2rem 1.5rem; }
     .philosophy-section { padding: 3rem 1.5rem; }
     .en-row { flex-direction: column; gap: 1.5rem; }
   }
@@ -737,11 +785,11 @@
   <div class="hero-kanji">縁</div>
   <div class="hero-ornament"></div>
 
-  <p class="hero-eyebrow">Vino Collective · En Collective Inc.</p>
+  <p class="hero-eyebrow">Vino Collective · En Collective LLC</p>
 
   <h1 class="hero-title">Your Vineyard.<br>Your Wine.<br>Your Name.</h1>
 
-  <p class="hero-title-jp">世界の大地に、あなたの縁を植える。</p>
+  <p class="hero-title-jp">世界の大地に、あなたの縁（えん）を植える。</p>
 
   <p class="hero-sub">
     ワインを買うのではない。<br>
@@ -757,6 +805,32 @@
   </div>
 </section>
 
+<!-- ══ FOUNDING PATRON OVERVIEW ══ -->
+<div class="founding-box reveal">
+  <div class="founding-label">Founding Patron Program · 概要</div>
+  <div class="founding-grid">
+    <div class="founding-item">
+      <div class="founding-item-label">期間</div>
+      <div class="founding-item-val">2026年4月 〜 2027年3月（1年間）</div>
+    </div>
+    <div class="founding-item">
+      <div class="founding-item-label">ワイン本数</div>
+      <div class="founding-item-val">オリジナルラベルワイン 6本／年</div>
+    </div>
+    <div class="founding-item">
+      <div class="founding-item-label">現地体験</div>
+      <div class="founding-item-val">収穫祭へのご招待<br>（渡航が難しい場合はオンライン参加も可）</div>
+    </div>
+    <div class="founding-item">
+      <div class="founding-item-label">免責事項</div>
+      <div class="founding-item-val">天候・収穫状況により内容が変動する場合があります</div>
+    </div>
+  </div>
+  <p class="founding-disclaimer">
+    本プログラムは投資商品・金融商品ではありません。ワインの品質・収穫量は自然条件に左右されるため、内容および提供時期をお約束するものではありません。
+  </p>
+</div>
+
 <div class="divider"></div>
 
 <!-- ══ CONCEPT ══ -->
@@ -767,7 +841,7 @@
     Vino Collectiveは、Patronプログラムという仕組みを通じて、スペインの生産者・日本の消費者・関わるそれぞれの社会の三方に、小さな「縁」（えん）を産む仕組みです。
   </p>
   <p>
-    多くの人がワインを「購入」する。しかし Patron たちは、ワインを「所有」する。投資でも、会員サービスでもない。土地との縁、醸造家との関係、そして時間をかけて深まる「ものがたり」への参加。
+    多くの人がワインを「購入」する。しかし Patron たちは、土地の一年に関わる。投資でも、会員サービスでもない。土地との縁（えん）、醸造家との関係、そして時間をかけて深まる「ものがたり」への参加。
   </p>
 
   <div class="pillars">
@@ -784,7 +858,7 @@
     <div class="pillar">
       <div class="pillar-num">03</div>
       <div class="pillar-title">Legacy</div>
-      <p class="pillar-desc">毎年深まる関係。ワインは飲まれた後も、記憶と縁は次の世代まで残り続ける。</p>
+      <p class="pillar-desc">毎年深まる関係。ワインは飲まれた後も、記憶と縁（えん）は次の世代まで残り続ける。</p>
     </div>
   </div>
 </section>
@@ -794,9 +868,9 @@
 <!-- ══ THE EXPERIENCE ══ -->
 <section class="reveal">
   <div class="section-label">The Experience</div>
-  <h2>1年間の縁のかたち。<br>季節ごとに届くもの。</h2>
+  <h2>1年間の縁（えん）のかたち。<br>季節ごとに届くもの。</h2>
   <p class="lead">
-    有機農法、手摘み、伝統品種。Patronプログラムは、ワイナリーの一年のリズムとともに進んでいく。季節ごとに届く便りが、あなたとその土地の縁を育てる。
+    有機農法、手摘み、伝統品種。Patronプログラムは、ワイナリーの一年のリズムとともに進んでいく。季節ごとに届く便りが、あなたとその土地の縁（えん）を育てる。
   </p>
 
   <div class="experience-timeline" style="margin-top:3.5rem; position:relative; padding-left:2rem; border-left:0.5px solid var(--border);">
@@ -819,14 +893,14 @@
       <div style="position:absolute; left:-4px; top:8px; width:7px; height:7px; border-radius:50%; background:var(--gold); opacity:0.6;"></div>
       <div style="font-family:'Noto Sans JP',sans-serif; font-size:0.6rem; letter-spacing:0.3em; color:var(--gold); margin-bottom:0.75rem;">Autumn — 秋</div>
       <div style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-style:italic; color:var(--cream); margin-bottom:0.75rem;">Harvest Invitation</div>
-      <p style="font-size:0.85rem; line-height:2; color:rgba(245,240,232,0.55); margin:0;">収穫祭へのプライベート招待。ワイナリー訪問、醸造家と語らう時間。参加できない場合も、収穫の瞬間を記録した映像が届く。収穫を終えたブドウは、ここから醸造・熟成のプロセスへ。</p>
+      <p style="font-size:0.85rem; line-height:2; color:rgba(245,240,232,0.55); margin:0;">収穫祭へのプライベート招待。ワイナリーを訪ね、オーナーファミリーや醸造家をはじめとする生産者と直接語らう時間。現地への渡航が難しい場合は、収穫の様子をリアルタイムで届けるオンライン体験にご参加いただけます。収穫を終えたブドウは、ここから醸造・熟成のプロセスへ。</p>
     </div>
 
     <div style="padding:0 0 1rem 2.5rem; position:relative;">
       <div style="position:absolute; left:-4px; top:8px; width:7px; height:7px; border-radius:50%; background:var(--gold); opacity:0.6;"></div>
       <div style="font-family:'Noto Sans JP',sans-serif; font-size:0.6rem; letter-spacing:0.3em; color:var(--gold); margin-bottom:0.75rem;">Winter &amp; Beyond — 冬、そして翌年へ</div>
       <div style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-style:italic; color:var(--cream); margin-bottom:0.75rem;">Your Wine Arrives</div>
-      <p style="font-size:0.85rem; line-height:2; color:rgba(245,240,232,0.55); margin:0;">初年度の冬は、早飲み用またはワイナリー規定商品をお届けします。あなたの名前が入ったオリジナルラベルのワインは、醸造・熟成を経て翌年に届きます。手書きのメッセージカードとともに。そして、縁はまた一年深まる。</p>
+      <p style="font-size:0.85rem; line-height:2; color:rgba(245,240,232,0.55); margin:0;">初年度の冬は、早飲み用またはワイナリー規定商品をお届けします。あなたの名前が入ったオリジナルラベルのワインは、醸造・熟成を経て翌年に届きます。手書きのメッセージカードとともに。そして、縁（えん）はまた一年深まる。</p>
     </div>
 
   </div>
@@ -840,7 +914,7 @@
 <!-- ══ CURRENT ESTATE ══ -->
 <div class="estate-section reveal" id="estate">
   <div class="section-label">Current Estate</div>
-  <h2>最初の縁。<br>バルセロナ、Alella。</h2>
+  <h2>最初の En（縁）。<br>バルセロナ、Alella。</h2>
 
   <div class="estate-card">
     <!-- LEFT -->
@@ -895,8 +969,9 @@
       </ul>
 
       <div style="margin-top:1.5rem; padding-top:1.5rem; border-top:0.5px solid var(--border-light);">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; color:var(--cream); line-height:1;">€2,000</div>
-        <div style="font-family:'Noto Sans JP',sans-serif; font-size:0.6rem; letter-spacing:0.15em; color:rgba(245,240,232,0.35); margin-top:0.4rem;">一度限りの参加費 · 年会費なし · 配送料込み</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-style:italic; color:var(--cream); line-height:1.4;">参加費・詳細は、お問い合わせください</div>
+        <div style="font-family:'Noto Sans JP',sans-serif; font-size:0.6rem; letter-spacing:0.15em; color:rgba(245,240,232,0.35); margin-top:0.6rem;">年会費なし · 配送料込み</div>
+        <a class="btn-estate" href="invite.html" style="margin-top:1.5rem;">招待状を受け取る →</a>
       </div>
     </div>
   </div>
@@ -907,8 +982,8 @@
 <!-- ══ COMING SOON ══ -->
 <section class="reveal">
   <div class="section-label">Next Estates</div>
-  <h2>次の縁は、<br>準備中です。</h2>
-  <p>Vino Collectiveは、Art Laietaを皮切りに複数のワイナリーとの縁を順次展開していきます。</p>
+  <h2>次の縁（えん）は、<br>準備中です。</h2>
+  <p>Vino Collectiveは、Art Laietaを皮切りに複数のワイナリーとの縁（えん）を順次展開していきます。</p>
 
   <div class="coming-grid">
     <div class="coming-card">
@@ -982,17 +1057,17 @@
     ワインは人類史上最も長く存続する産業の一つです。私にとってワインの魅力は、土地を育てブドウを栽培する農業としての一面——つまり、地球そのものと向き合う営みです。デジタルとAIが加速する時代に、あえて土に手を入れ、季節を待ち、醸造家と言葉を交わす。そこにこそ、失われつつある豊かさがあると思っています。
   </p>
   <p>
-    異国の地で、一人の日本人としてできることがある。この土地に関わる人々の課題を、共に解決したい。文化を隔てて、共に歩むことの面白さ——そこに賭けています。一つの出会い、一つの関わりで、世界はぐっと近くなる。Vino Collectiveがやろうとしているのは、大きな話ではなく、一人ひとりの「縁」を、丁寧に作ることです。
+    異国の地で、一人の日本人としてできることがある。この土地に関わる人々の課題を、共に解決したい。文化を隔てて、共に歩むことの面白さ——そこに賭けています。一つの出会い、一つの関わりで、世界はぐっと近くなる。Vino Collectiveがやろうとしているのは、大きな話ではなく、一人ひとりの「縁（えん）」を、丁寧に作ることです。
   </p>
 
   <div class="en-row">
     <div class="en-logo">En</div>
     <div>
       <p class="en-body">
-        Vino Collectiveは、En Collective 株式会社が運営するライフスタイル事業です。<br>
-        日本の「えん（縁）」という哲学のもとに、文化と文化のギャップに事業機会を見出します。
+        Vino Collectiveは、En Collective LLC（合同会社 En Collective）が運営するライフスタイル事業です。<br>
+        日本の「縁（えん）」という哲学のもとに、文化と文化のギャップに事業機会を見出します。
       </p>
-      <a class="en-link" href="mailto:hello@encollective.jp">hello@encollective.jp</a>
+      <a class="en-link" href="mailto:team@en-collective.jp">team@en-collective.jp</a>
     </div>
   </div>
 </div>
@@ -1015,9 +1090,9 @@
 <footer>
   <div class="footer-logo">Vino Collective</div>
   <p class="footer-text">
-    Operated by En Collective 株式会社 · 広島県 · 2026年設立<br>
-    hello@encollective.jp<br><br>
-    © 2026 Vino Collective / En Collective Inc. All rights reserved.
+    Operated by En Collective LLC（合同会社 En Collective） · 広島県 · 2026年設立<br>
+    team@en-collective.jp<br><br>
+    © 2026 Vino Collective / En Collective LLC. All rights reserved.
   </p>
 </footer>
 
